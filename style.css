@@ -1,0 +1,72 @@
+:root {
+    --distance:0;
+    --height:0;
+    --number:0;
+    --speed:0;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider {
+    position: fixed;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+  }
+  #wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 90vh;
+    position: relative;
+    /* // background: red; */
+    width: 90vh;
+    gap: var(--height);
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+  }
+  
+  /* // Circle styling */
+  .circle-wrap {
+    position: relative;
+    background: blue;
+    width: 1px;
+    height: 1px;
+    display: flex;
+    background: transparent;
+    
+    &:not(:last-child) {
+      margin-right: var(--distance); 
+    }
+  }
+  .circle {
+      border: 1px solid black;
+      border-radius: 50%;
+      width: var(--distance);
+      height: var(--distance);
+      position: absolute;
+      animation: circleAnimation var(--speed) linear infinite;
+  }
+  
+  
+  @keyframes circleAnimation {
+    0% {
+      transform: scale(0.2);
+    }
+    50% {
+      transform: scale(var(--number));
+    }
+    100% {
+      transform: scale(0.2);
+    }
+  }
